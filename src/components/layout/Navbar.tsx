@@ -2,9 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, Zap, MapPin, ArrowRight } from 'lucide-react';
+import { Menu, X, ChevronDown, MapPin, ArrowRight } from 'lucide-react';
 import { navLinks } from '@/data/navigation';
 import { Button } from '@/components/ui/Button';
 
@@ -49,12 +50,17 @@ export const Navbar: React.FC = () => {
             <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="group flex items-center gap-2.5 text-[#000000] font-extrabold tracking-tighter text-2xl transition-transform duration-300"
+                className="flex items-center transition-opacity hover:opacity-90 duration-200"
+                aria-label="EVION Home"
               >
-                <span className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-[#F8F8F8] border border-[#E5E5E5] group-hover:border-[#6DBE07] transition-colors">
-                  <Zap className="w-4 h-4 text-[#6DBE07] group-hover:scale-110 transition-transform" />
-                </span>
-                <span className="font-bold tracking-widest text-xl text-[#000000]">EVION</span>
+                <Image
+                  src="/logo1.jpeg"
+                  alt="EVION"
+                  width={1536}
+                  height={364}
+                  priority
+                  className="h-7 sm:h-8 w-auto object-contain rounded-md"
+                />
               </Link>
 
               {/* Status indicator */}

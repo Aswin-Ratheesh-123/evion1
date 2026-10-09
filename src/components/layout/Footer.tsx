@@ -2,7 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
+import { CheckCircle2, ShieldCheck } from 'lucide-react';
 import { footerLinks } from '@/data/navigation';
 import { Button } from '@/components/ui/Button';
 
@@ -27,11 +28,18 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 pb-16 border-b border-neutral-800">
           {/* Brand & Newsletter Column */}
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="flex items-center gap-2.5 text-white font-extrabold tracking-tight text-2xl">
-              <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800">
-                <Zap className="w-4 h-4 text-[#6DBE07]" />
-              </span>
-              <span className="font-bold tracking-widest text-xl text-white">EVION</span>
+            <Link
+              href="/"
+              className="inline-flex items-center transition-opacity hover:opacity-90 duration-200"
+              aria-label="EVION Home"
+            >
+              <Image
+                src="/logo1.jpeg"
+                alt="EVION"
+                width={1536}
+                height={364}
+                className="h-8 sm:h-9 w-auto object-contain rounded-md"
+              />
             </Link>
 
             <p className="text-sm text-neutral-400 max-w-sm leading-relaxed">
