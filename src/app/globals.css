@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #000000;
+  --primary: #6DBE07;
+  --primary-hover: #7ED321;
+  --secondary: #333333;
+  --muted: #666666;
+  --border: #E5E5E5;
+  --surface: #F8F8F8;
+  --dark: #050505;
+  --card: #FFFFFF;
+  --card-hover: #F8F8F8;
+  --electric-accent: #6DBE07;
+  --electric-hover: #7ED321;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F8F8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E5E5E5;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6DBE07;
+}
+
+/* Selection */
+::selection {
+  background: rgba(109, 190, 7, 0.2);
+  color: #000000;
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 30px -5px rgba(109, 190, 7, 0.25);
+}
+
+.glow-text {
+  text-shadow: 0 0 20px rgba(109, 190, 7, 0.3);
+}
+
+/* Grid background helper */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 0%, rgba(109, 190, 7, 0.08) 0%, transparent 60%);
+}
+
+/* Energy line animation */
+@keyframes energyPulse {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+}
+
+.animate-energy-line {
+  stroke-dasharray: 80 120;
+  animation: energyPulse 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Card hover transitions */
+.hover-card-border {
+  transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-card-border:hover {
+  border-color: #6DBE07;
+  box-shadow: 0 10px 30px -10px rgba(109, 190, 7, 0.15);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
