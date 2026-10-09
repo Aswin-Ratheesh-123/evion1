@@ -1,22 +1,22 @@
 import type { Metadata, Viewport } from 'next';
-import { Plus_Jakarta_Sans, JetBrains_Mono } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { CustomCursor } from '@/components/layout/CustomCursor';
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  display: 'swap',
+const plusJakartaSans = localFont({
+  src: '../../public/fonts/PlusJakartaSans-VariableFont_wght.woff2',
   variable: '--font-sans',
-  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+  weight: '400 800',
 });
 
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ['latin'],
-  display: 'swap',
+const jetbrainsMono = localFont({
+  src: '../../public/fonts/JetBrainsMono-VariableFont_wght.woff2',
   variable: '--font-mono',
-  weight: ['400', '500', '700'],
+  display: 'swap',
+  weight: '400 700',
 });
 
 export const viewport: Viewport = {
